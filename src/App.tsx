@@ -3,38 +3,38 @@ import { useSpring, animated } from "react-spring";
 
 const challenges = {
     1: {
-        title: "💻 Digital Oops! & Learnings",
-        description: "POTANGINA MAHAL KITA BBM",
+        title: "💡 First Impressions & CS Curiosity",
+        description:
+            "What made you choose Computer Science, and what’s one tech topic or skill you’re most excited to explore this year?",
         color: "bg-gradient-to-br from-indigo-800 to-indigo-950",
     },
     2: {
-        title: "🎬 Problem Solving & Pop Culture",
-        description:
-            "Describe a tricky problem you solved recently (could be tech-related, or something like fixing a broken gadget or organizing an event), and if your life were a movie, what genre would it be?",
+        title: "🎮 Hobbies and Lifestyle",
+        description: "What's your biggest hobby",
         color: "bg-gradient-to-br from-teal-800 to-teal-950",
     },
     3: {
-        title: "� Future Visions & Fun Gadgets",
+        title: "🖥️ Build Your Dream App",
         description:
-            "If you could invent any gadget or app, what would it do (no tech knowledge required!), and what's one emerging technology you're curious about?",
+            "If you could make any app or website instantly without coding it, what would it do, and who would use it the most?",
         color: "bg-gradient-to-br from-emerald-800 to-emerald-950",
     },
     4: {
-        title: "🌐 Online Discoveries & Life Hacks",
+        title: "🌐 Internet Gold Mines",
         description:
-            "What's the most surprisingly useful thing you've ever learned or found online (could be a life hack, a skill, or a funny video), and what's one simple 'hack' that makes your daily life easier?",
+            "What's the coolest or funniest thing you've learned from the internet, and what's your go-to site/app when you need to chill?",
         color: "bg-gradient-to-br from-orange-800 to-orange-950",
     },
     5: {
-        title: "🤝 Teamwork Tales & Dream Teams",
+        title: "🤝 Collab Mode Activated",
         description:
-            "Share a time you worked well with a team to achieve something, and if you could build your ultimate dream team (for any project!), who would be on it (real or fictional)?",
+            "If you could team up with anyone (real or fictional) for a coding project, who would it be, and what would you build together?",
         color: "bg-gradient-to-br from-rose-800 to-rose-950",
     },
     6: {
-        title: "� Passion Projects & Playlists",
+        title: "🎧 Code & Chill",
         description:
-            "What's a personal project or hobby you're passionate about (tech or non-tech!), and what's a song or artist that always gets you motivated?",
+            "What's your ideal setup for a productive coding session—location, snacks, music—and what's one song that keeps you focused?",
         color: "bg-gradient-to-br from-violet-800 to-violet-950",
     },
 };
@@ -135,7 +135,7 @@ function App() {
             <img
                 src="logo.jpg"
                 alt="CSS Logo"
-                className=" rounded-full absolute w-[50%] "
+                className=" rounded-full absolute w-[50%] top-10"
             />
             {/* Animated Gradient Background */}
             <div className="absolute inset-0 z-0">
@@ -343,12 +343,13 @@ function App() {
             `}
                     >
                         <div className="flex items-center justify-between mb-2">
-                            <h2 className="text-base font-bold !text-white">
+                            <h2 className="text-base font-bold text-white">
                                 {
                                     challenges[
                                         currentRoll as keyof typeof challenges
                                     ].title
                                 }
+                                <p className="text-green-700"></p>
                             </h2>
                             <div className="flex items-center gap-1">
                                 <div className="bg-white/20 backdrop-blur-sm rounded-full px-2 py-0.5 flex items-center gap-1">
@@ -368,7 +369,7 @@ function App() {
                                 </div>
                             </div>
                         </div>
-                        <p className="!text-white/90 leading-relaxed mb-2 text-xs ">
+                        <p className="text-white/90 leading-relaxed mb-2 text-xs ">
                             {
                                 challenges[
                                     currentRoll as keyof typeof challenges
@@ -385,6 +386,7 @@ function App() {
                                     <span className="text-lg animate-bounce">
                                         🤝
                                     </span>
+                                    <span className="text-xs">POGGERS! 🎉</span>
                                 </div>
                             </button>
                         </div>
@@ -395,7 +397,9 @@ function App() {
                         🎯 Complete the challenge with your partner, then find
                         someone new to roll with! 🔄✨
                     </p>
-                    <p className="text-white/80 text-xs">Meet new friends!</p>
+                    <p className="text-white/80 text-xs">
+                        "Teamwork makes the dream work!" 💪 No cap! 🧢
+                    </p>
                 </div>
             </div>
             {showModal && (
