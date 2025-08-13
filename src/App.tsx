@@ -42,9 +42,11 @@ const challenges = {
 const DiceIcon = ({
     number,
     className,
+    size,
 }: {
     number: number;
     className?: string;
+    size?: number;
 }) => {
     const emojis = {
         1: "⚀",
@@ -55,7 +57,10 @@ const DiceIcon = ({
         6: "⚅",
     };
     return (
-        <span className={`${className} text-6xl`}>
+        <span
+            className={`${className} text-6xl`}
+            style={{ fontSize: `${size}px` }}
+        >
             {emojis[number as keyof typeof emojis]}
         </span>
     );
@@ -132,10 +137,17 @@ function App() {
 
     return (
         <div className="min-h-screen relative flex flex-col items-center justify-center p-1 overflow-hidden">
+            {/* Logo Insert */}
             <img
                 src="logo.jpg"
                 alt="CSS Logo"
-                className=" rounded-full absolute w-[50%] top-10"
+                className=" rounded-full absolute max-h-[50%] max-w-[50%] top-10"
+            />
+            {/* Shrek */}
+            <img
+                src="shrek.png"
+                alt="shrek"
+                className="absolute -bottom-10 right-2 z-0 w-30"
             />
             {/* Animated Gradient Background */}
             <div className="absolute inset-0 z-0">
@@ -153,6 +165,7 @@ function App() {
                 <div className="absolute bottom-1/4 left-1/5 w-8 h-8 rounded-full bg-blue-400/30 blur-lg animate-float3" />
                 <div className="absolute top-1/2 right-1/2 w-14 h-14 rounded-full bg-orange-400/30 blur-lg animate-float4" />
             </div>
+
             <style>{`
         @keyframes gradientMove {
           0% { background-position: 0% 50%; }
@@ -277,10 +290,7 @@ function App() {
                         </span>
                     </div>
                     <p className="text-white/90 text-base font-medium mb-1">
-                        Roll the dice to discover your next challenge! 🚀✨
-                    </p>
-                    <p className="text-white/80 text-xs">
-                        "This is where the fun begins!" - Anakin Skywalker 😄
+                        Find a person to pair with! Approach anyone you like 🫵😤
                     </p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-md rounded-2xl p-3 text-center border border-white/30 shadow-xl">
@@ -293,10 +303,11 @@ function App() {
                                 <DiceIcon
                                     number={currentRoll}
                                     className="w-40 h-40 text-white drop-shadow-2xl"
+                                    size={100}
                                 />
-                                <div className="absolute -top-1 -right-1 text-lg animate-bounce">
+                                {/* <div className="absolute -top-1 -right-1 text-lg animate-bounce">
                                     ✨
-                                </div>
+                                </div> */}
                             </div>
                         ) : (
                             <div className="w-12 h-12 border-2 border-dashed border-white/50 rounded-xl flex items-center justify-center bg-white/10">
@@ -323,7 +334,7 @@ function App() {
                         {isRolling ? (
                             <div className="flex items-center justify-center gap-1">
                                 <span className="text-xl animate-spin">🎲</span>
-                                Rolling... "Let's gooo!" 🔥
+                                Rolling...
                             </div>
                         ) : (
                             <div className="flex items-center justify-center gap-1">
@@ -343,7 +354,7 @@ function App() {
             `}
                     >
                         <div className="flex items-center justify-between mb-2">
-                            <h2 className="text-base font-bold text-white">
+                            <h2 className="text-base font-bold !text-white">
                                 {
                                     challenges[
                                         currentRoll as keyof typeof challenges
@@ -361,15 +372,9 @@ function App() {
                                             .padStart(2, "0")}
                                     </span>
                                 </div>
-                                <div className="bg-white/20 rounded-full p-1">
-                                    <DiceIcon
-                                        number={currentRoll}
-                                        className="w-4 h-4"
-                                    />
-                                </div>
                             </div>
                         </div>
-                        <p className="text-white/90 leading-relaxed mb-2 text-xs ">
+                        <p className="!text-white/90 leading-relaxed mb-2 text-xs ">
                             {
                                 challenges[
                                     currentRoll as keyof typeof challenges
@@ -386,7 +391,6 @@ function App() {
                                     <span className="text-lg animate-bounce">
                                         🤝
                                     </span>
-                                    <span className="text-xs">POGGERS! 🎉</span>
                                 </div>
                             </button>
                         </div>
