@@ -10,31 +10,32 @@ const challenges = {
     },
     2: {
         title: "🎮 Hobbies and Lifestyle",
-        description: "What's your biggest hobby",
+        description:
+            "Think about your biggest hobby. Why do you like it so much and do you think you're going to stick with it for a lifetime?",
         color: "bg-gradient-to-br from-teal-800 to-teal-950",
     },
     3: {
-        title: "🖥️ Build Your Dream App",
+        title: "🖥️ Computer-related Background",
         description:
-            "If you could make any app or website instantly without coding it, what would it do, and who would use it the most?",
+            "Do you have any background in programming and computers in general?",
         color: "bg-gradient-to-br from-emerald-800 to-emerald-950",
     },
     4: {
-        title: "🌐 Internet Gold Mines",
+        title: "🏫 First Weeks Feels",
         description:
-            "What's the coolest or funniest thing you've learned from the internet, and what's your go-to site/app when you need to chill?",
+            "What’s been the most surprising or memorable thing about your first days in college so far?",
         color: "bg-gradient-to-br from-orange-800 to-orange-950",
     },
     5: {
-        title: "🤝 Collab Mode Activated",
+        title: "🛠️ Build Your Dream App",
         description:
-            "If you could team up with anyone (real or fictional) for a coding project, who would it be, and what would you build together?",
+            "If you had unlimited skills and resources, what kind of app, game, or software would you create, and why?",
         color: "bg-gradient-to-br from-rose-800 to-rose-950",
     },
     6: {
-        title: "🎧 Code & Chill",
+        title: "🌟 A Little About You",
         description:
-            "What's your ideal setup for a productive coding session—location, snacks, music—and what's one song that keeps you focused?",
+            "What's one small thing that always makes your day better, no matter how stressful things get?",
         color: "bg-gradient-to-br from-violet-800 to-violet-950",
     },
 };
@@ -121,7 +122,8 @@ function App() {
 
             setTimeout(() => {
                 setShowChallenge(true);
-                setTimerActive(true);
+                // Uncomment to re-enable timer
+                // setTimerActive(true);
             }, 500);
         }, 1000);
     };
@@ -362,7 +364,11 @@ function App() {
                                 }
                                 <p className="text-green-700"></p>
                             </h2>
-                            <div className="flex items-center gap-1">
+
+                            {/* !!! */}
+                            {/* Uncomment to re-enable timer */}
+
+                            {/* <div className="flex items-center gap-1">
                                 <div className="bg-white/20 backdrop-blur-sm rounded-full px-2 py-0.5 flex items-center gap-1">
                                     <span className="text-base">⏰</span>
                                     <span className="text-xs font-medium">
@@ -372,7 +378,7 @@ function App() {
                                             .padStart(2, "0")}
                                     </span>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <p className="!text-white/90 leading-relaxed mb-2 text-xs ">
                             {
@@ -417,17 +423,8 @@ function App() {
                                 <span className="text-2xl">🎉</span>
                             </div>
                             <h3 className="text-base font-bold text-gray-900 mb-1">
-                                Challenge Complete! 🎊 "That's what I'm talking
-                                about!" 🔥
+                                Challenge Complete!
                             </h3>
-                            <p className="text-gray-600 mb-2 text-xs">
-                                Great job completing the challenge together! 🌟
-                                Now it's time to find your next partner! 🚀
-                                <br />
-                                <span className="text-xs italic">
-                                    "This is the way!" 😎
-                                </span>
-                            </p>
                             <div className="space-y-1">
                                 <button
                                     onClick={() => {
